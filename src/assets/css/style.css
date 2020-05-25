@@ -1,0 +1,321 @@
+.logo{
+    width:120px
+ }
+ 
+ body{
+     margin:0;
+ }
+ #sliderImage .carousel-item{
+     background-repeat: no-repeat;
+     background-position: center;
+     background-size: cover;
+     height:100vh; 
+     position: fixed;
+     
+ }
+ .caption-text{
+     z-index: 100;
+     color:#fff;
+     position: absolute;
+     top: 50%;
+   left: 50%;
+   -ms-transform: translateX(-50%) translateY(-50%);
+   -webkit-transform: translate(-50%,-50%);
+   transform: translate(-50%,-50%);
+   margin:0 auto;
+ }
+ .overlay{
+     position: absolute;
+     /* background: -webkit-linear-gradient(top, rgba(255,145,0,0.2) 0%,rgba(255,230,48,0.2) 60%), -webkit-linear-gradient(20deg, rgba(255,0,0,0.5) 0%,rgba(255,0,0,0) 35%); */
+ 
+     background: linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7),rgb(0, 0, 0));
+     width: 100vw;
+     height: 100vh;
+     z-index: 1;
+     position: fixed;
+ }
+ .page{
+     z-index: 3;
+     margin-top: 100vh;
+     position: relative;
+     background-color: black;
+     color: #fff;
+     padding:5% 5%;
+ }
+ 
+ .postSection{
+     padding:5% 5%;
+     background-color: white;
+     z-index: 3;
+     position: relative;
+ }
+ 
+ .navbar-nav li a{
+     color: #31C929;
+     font-size: 17px;
+ }
+ .navbar-nav li:hover{
+     animation-name: heartBeat;
+     animation-duration: .65s;
+ }
+
+ .navbar-nav .removeAnimate:hover{
+     animation-name: none !important;
+ }
+ 
+ .router-link-exact-active{
+     border-bottom: 2px solid #31C929;
+     font-weight: bold;
+ }
+ /* ANIMATION */
+ /* animation delay */
+ .caption-text .el1.animated{
+     animation-delay:1s;
+ }
+ .caption-text .el2.animated{
+     animation-delay:2s;
+ }
+ .caption-text .el3.animated{
+     animation-delay:3s;
+ }
+ .caption-text .el4.animated{
+     animation-delay:4s;
+ }
+ 
+ /* change carosel animation */
+ .carousel-animation .carousel-item {
+     transform: none;
+ }
+ .carousel-animation .carousel-item-left {
+     animation-name: bounceInRight;
+     animation-duration: .65s;
+ }
+ .carousel-animation .carousel-item-left.active {
+     transform: translate(0, 0);
+     animation-name: bounceOutLeft;
+ }
+ .carousel-animation .carousel-item-right {
+     animation-name: bounceInLeft;
+     animation-duration: .65s;
+ }
+ .carousel-animation .carousel-item-right.active {
+     transform: translate(0, 0);
+     animation-name: bounceOutRight;
+ }
+ 
+ /* BUTTON TO SCROLL DOWN */
+ .scrollDown{
+     
+     z-index: 4;
+     position:absolute;
+ }
+ 
+ .arrow-down{
+     font-size: 10vh;
+ }
+ .arrow-down.animated{
+     /* animation-duration: 2.5s; */
+   animation-iteration-count: infinite;
+   cursor: pointer;
+ }
+ 
+ .main{
+     display: none;
+ }
+ 
+ .card-img-top{
+     width: 100%;
+     height: 15vw;
+     object-fit: cover;
+ }
+ .page.card-body{
+     text-align: center;
+    color: black;
+    height: 5vw;
+ }
+ .card-title{
+     font-weight: bolder;
+     text-decoration: none;
+     text-align: center;
+ }
+ 
+ a{
+     text-decoration: none;
+ }
+ a:hover{
+     text-decoration: none;
+ }
+ 
+ .heading{
+     border-left: 3px solid #31C929;
+     font-weight: bold;
+     padding-left: 1%;
+ }
+ .fa:hover{
+     animation-name: heartBeat;
+     animation-duration: .65s;
+ }
+ 
+ .postSection .card-footer .fa a{
+    font-size: 10%;
+    color:#31C929;
+ }
+ 
+
+
+/* farm Product */
+
+/* sidebar */
+
+.pageWrapper{
+    margin-top:20vh; 
+    min-height:100vh
+}
+#sidebar{
+    position:fixed;
+    width:200px;
+    height:100%;
+    background:#151719;
+    color:#fff;
+    padding: 3% 1%;
+    /* left:0px;  */
+    border-top-right-radius: 6px;
+
+}
+@media(min-width:992px){
+    #sidebar .toggle-btn {
+        display:none;
+}
+}
+@media (max-width:576px){
+    #sidebar{
+        left:-200px;
+    }
+}
+
+#sidebar .toggleBar{
+    transition: all 10s;
+    /* left: 0px; */
+    left:-200px !important;
+
+}
+#sidebar ul li{
+    color:rgba(230,230,230,0.9);
+    list-style:none;
+    padding:15px 10px;
+    border-bottom: 1px solid rgba(100,100,100,0.3);
+    cursor: pointer;
+}
+#sidebar ul li:hover{
+    color:rgb(54, 180, 5);
+    border-bottom: 1px solid rgb(54, 180, 5);
+    transition: all 2s;
+
+}
+#sidebar .toggle-btn{
+    position:absolute;
+    left:230px;
+    top: 20px;
+    cursor: pointer;
+}
+#sidebar .toggle-btn span{
+    display:block;
+    width:30px;
+    height:5px;
+    background:#151719;
+    margin:3px 0px;
+    
+}
+
+.productList{
+padding:0% 1% 0% 10%;
+}
+
+/* FARMERS */
+.farm-icon{
+    width:10em;
+    border-radius: 5px;
+    box-shadow: 0px 0px 2px 2px rgba(100,100,100,0.3);
+}
+
+.farm-footer{
+    background-color: rgba(230,230,230,0.9);
+    box-shadow: 0px 0px 3px 1px rgba(100,100,100,0.3);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    min-height: 20vh;
+    padding:5%;
+    color:darkslategray;
+    text-align: center;
+}
+.farm-footer h6{
+    text-transform: uppercase;
+}
+/* AUTHENTICATION */
+.authentication{
+    
+    background: linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7),rgb(0, 0, 0)), url('../images/farmer-holds-rice-hand_1150-6063.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+
+.form-control:focus {
+    border-color: #31C929;
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+} 
+
+.eorrForm{
+    border-color: red;
+    box-shadow:0 0 0 0.2rem rgba(247, 6, 6, 0.25);
+}
+
+/* confirmation */
+.confirmation{
+    
+    background: linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7),rgb(0, 0, 0)), url('../images/handshake-4002834_960_720.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.coverImage{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+ /* FOOTER */
+ footer{
+     background-color: #31C929;
+     z-index: 3;
+     position: relative;
+ 
+ }
+ 
+  .upperFooter{
+      color:#fff;
+      font-size: large;
+  }   
+  .upperFooter a{
+      color:#fff;
+      text-decoration: none;
+  }
+  .upperFooter a:hover{
+     color:#fff;
+     text-decoration: none;
+ }
+ .upperFooter ul{
+     list-style-type: none;
+ } 
+ 
+ .upperFooter .social li:hover{
+     animation-name: heartBeat;
+     animation-duration: .65s;
+ } 
+ .lowerFooter{
+     background-color: black;
+     color: #fff;
+ }
+
+
+
