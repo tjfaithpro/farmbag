@@ -26,8 +26,12 @@ class productController
     public function custom_url($custom_url){
         echo $this->c_url=$custom_url;
     }
-    public function products(){
+    public function products($data){
+        // echo ($data['category_id']);
+        if($data['category_id']==0 || $data['category_id']=="")
            echo Product::latest()->get();
+        else
+           echo Product::latest()->where('category_id',$data['category_id'])->get();
     }
 
     public function product_category(){
@@ -90,7 +94,7 @@ class productController
         // $pass;
         // Check password
         // Query the database for username and password
-        $aut = User::where('username', $data['username'])->get();
+        $aut = User::where('username', $data['username'])->orWhere('email',$data['username'])->get();
         if (!count($aut)) {
             // $html_doc->title = "testtitle";
             echo json_encode((object)['non_data'=>'Incorrect Username']);

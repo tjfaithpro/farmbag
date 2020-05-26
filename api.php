@@ -25,7 +25,8 @@ if(isset($_GET['action'])){
 }
 
 if($action == 'products'){
-    return json_encode($controllerQuery->products());
+   $query = json_decode(file_get_contents("php://input"),true);
+    return json_encode($controllerQuery->products($query));
 }
 
 if($action == 'product_category'){

@@ -17,7 +17,7 @@
                 <li @click="hideNav" class="nav-item"><router-link class="nav-link" to="/farmers"> Farmers</router-link></li>
                 <li @click="hideNav" class="nav-item"><router-link class="nav-link" to="/agroBusiness"> Experts | Agrobusiness</router-link></li>
                 
-                <li v-if="sessionPresent" class="removeAnimate nav-item dropdown">
+                <li @click="hideNav" v-if="sessionPresent" class="removeAnimate nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Hi! {{userSessionData.username.slice(0, 5) || userSessionData.username}}
                 </a>
@@ -25,12 +25,12 @@
                         <a class="dropdown-item" href="#">Action</a>
                         <a class="dropdown-item" href="#">Another action</a>
                         <div class="dropdown-divider"></div>
-                        <div class="dropdown-item" @click="logoutUser" style="cursor:pointer">Log out</div>
+                        <div class="dropdown-item"  @click="logoutUser" style="cursor:pointer">Log out</div>
                     </div>
                 </li>
                 
-                <li v-if="!sessionPresent" class="nav-item"><router-link class="nav-link" to="/login">Login</router-link></li>
-                <li v-if="!sessionPresent" class="nav-item"><router-link class="nav-link" to="/signup">Sign Up</router-link></li> 
+                <li @click="hideNav" v-if="!sessionPresent" class="nav-item"><router-link class="nav-link" to="/login">Login</router-link></li>
+                <li @click="hideNav" v-if="!sessionPresent" class="nav-item"><router-link class="nav-link" to="/signup">Sign Up</router-link></li> 
             </ul>
         </div>
     </div>
