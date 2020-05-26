@@ -163,7 +163,6 @@
 <script scope>
 import $ from 'jquery'
 
-
 export default {
     data(){
               return{
@@ -183,14 +182,14 @@ export default {
           },
            methods:{
            loadProducts(){
-               
+            console.log(this.$hostname);
             this.axios.get(this.$hostname+"api.php?action=products").then((response)=>{
                 this.products=response.data;
                 // console.log(response.data);
             }).catch(err => {console.log(err)})
            },
            loadProductCategory(){
-           this.axios.get(this.$hostname+'api.php?action=product_category').then((response)=>{
+           this.axios.get(this.$hostname+"api.php?action=product_category").then((response)=>{
                 this.product_categorys=response.data;
                 // console.log(response.data);
             }).catch(err => {console.log(err)})

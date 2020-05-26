@@ -7,15 +7,15 @@
          <button class="navbar-toggler custom-toggler" type="button"  data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div v-if="display" class="collapse navbar-collapse"  id="navbarSupportedContent">
               <!-- Left Side Of Navbar -->
             <ul class="navbar-nav mr-auto"></ul>
              <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item"><router-link class="nav-link" to="/">Home</router-link></li>
-                <li class="nav-item"><router-link class="nav-link" to="/farmProducts"> Farm Products</router-link></li>
-                <li class="nav-item"><router-link class="nav-link" to="/farmers"> Farmers</router-link></li>
-                <li class="nav-item"><router-link class="nav-link" to="/agroBusiness"> Experts | Agrobusiness</router-link></li>
+                <li @click="hideNav" class="nav-item"><router-link class="nav-link" to="/">Home</router-link></li>
+                <li @click="hideNav" class="nav-item"><router-link class="nav-link" to="/farmProducts"> Farm Products</router-link></li>
+                <li @click="hideNav" class="nav-item"><router-link class="nav-link" to="/farmers"> Farmers</router-link></li>
+                <li @click="hideNav" class="nav-item"><router-link class="nav-link" to="/agroBusiness"> Experts | Agrobusiness</router-link></li>
                 
                 <li v-if="sessionPresent" class="removeAnimate nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -57,11 +57,16 @@ export default {
     data(){
         return{
             sessionPresent:false,
-            userSessionData:[]
+            userSessionData:[],
+            display:true
         }
     },
     created() {
        this.sessionMethod();
+       
+    },
+    updated(){
+        this.display=true;
     },
     methods:{
         logoutUser() {
@@ -78,6 +83,9 @@ export default {
             this.userSessionData = this.$session.get('user_id');
             // console.log()
         }
+        },
+        hideNav(){
+            this.display=false;
         }
     }
 }
