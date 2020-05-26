@@ -103,7 +103,7 @@ export default {
     methods:{
         checkUsername(){
        
-            this.axios.post( "http://localhost/MY_WEB_WORKS/farmbag_vue_cli/api.php?action=checkUsername",{
+            this.axios.post(this.$hostname+"api.php?action=checkUsername",{
                 username:this.username,
             }).then((response)=>{
                 if (this.username ==''){
@@ -122,7 +122,7 @@ export default {
             }).catch(err => {err})
            },
            checkEmail(){
-                this.axios.post( "http://localhost/MY_WEB_WORKS/farmbag_vue_cli/api.php?action=checkEmail",{
+                this.axios.post(this.$hostname+"api.php?action=checkEmail",{
                 email:this.email,
                 }).then((response)=>{
                 if (this.email ==''){
@@ -156,7 +156,7 @@ export default {
             // Submit form
             submitForm(){
            
-            this.axios.post("http://localhost/MY_WEB_WORKS/farmbag_vue_cli/api.php?action=signUp", 
+            this.axios.post(this.$hostname+"api.php?action=signUp", 
             {
                 username:this.username, 
                 password:this.password, 

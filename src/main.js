@@ -11,7 +11,7 @@ Vue.use(VueAxios, axios)
 Vue.use(VueSession)
 
 // export const bus = new Vue();
-
+Vue.prototype.$hostname = 'http://localhost/MY_WEB_WORKS/farmbag_vue_cli/';
 window.$ = window.jQuery = require("jquery");
 window.$ = require('jquery') 
 // window.JQuery = require('jquery')

@@ -35,14 +35,14 @@ export default {
             
         
             userData(){
-               this.axios.get( "http://localhost/MY_WEB_WORKS/farmbag_vue_cli/api.php?action=users").then((response)=>{
+               this.axios.get( this.$hostname+"api.php?action=users").then((response)=>{
                 this.users= response.data;
              
             }).catch(err => {err});
             },
 
             postid(){
-                  this.axios.post("http://localhost/MY_WEB_WORKS/farmbag_vue_cli/api.php?action=getUserData", this.currentUser).then(function(response){
+                  this.axios.post(this.$hostname+"api.php?action=getUserData", this.currentUser).then(function(response){
                 this.currentUser = {};
                 console.log(response);
                 if(response.data.error){

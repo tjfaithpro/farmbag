@@ -65,7 +65,7 @@ export default {
     },
     methods:{
         login(){
-            this.axios.post("http://localhost/MY_WEB_WORKS/farmbag_vue_cli/api.php?action=login",{
+            this.axios.post(this.$hostname+"api.php?action=login",{
                 username:this.username, password:this.password
             }).then((response)=>{
             if(response.data.non_data){

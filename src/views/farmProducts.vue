@@ -83,12 +83,12 @@ export default {
           },
         methods:{
             loadProducts(){
-            this.axios.get( "http://localhost/MY_WEB_WORKS/farmbag_vue_cli/api.php?action=products").then((response)=>{
+            this.axios.get( this.$hostname+"api.php?action=products").then((response)=>{
                 this.products=response.data;
             }).catch(err => {err})
            },
             loadProductCategory(){
-            this.axios.get('http://localhost/MY_WEB_WORKS/farmbag_vue_cli/api.php?action=product_category').then((response)=>{
+            this.axios.get(this.$hostname+'api.php?action=product_category').then((response)=>{
                 this.product_categorys=response.data;
             }).catch(err => {err})
         },
