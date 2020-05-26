@@ -6,9 +6,9 @@ header('Access-Control-Max-Age: 1000');
 header('Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-With');
 header("Content-Type:application/json, Access-Control-Allow-Origin:*");
 
-include_once __DIR__."\database.php";
-include_once __DIR__."\controller\queryController.php";
-include __DIR__."\mail.php";
+include_once "database.php";
+include_once "controller/queryController.php";
+include "mail.php";
 
 $controllerQuery = new productController();
 

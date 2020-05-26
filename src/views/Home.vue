@@ -201,7 +201,6 @@ export default {
            }
        },
        created() {
-           console.log(this.$hostname);
            $(document).ready(function(){
             $('.navbar').removeClass('navbar-light bg-white');
             $('.footer').addClass('d-none');
