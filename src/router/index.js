@@ -75,8 +75,7 @@ Vue.use(VueRouter)
     path:'/confirmSignUp',
     name:'confirm',
     component:confirmSignUp
-  },
-  // { path: '*', redirect: '/404', } 
+  }
 ]
 
 const router = new VueRouter({
