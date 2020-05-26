@@ -167,6 +167,7 @@ import $ from 'jquery'
 export default {
     data(){
               return{
+                base_url: window.location.origin,
                 products:[],
                  limitProduct:9,
                  product_categorys:{
@@ -183,8 +184,8 @@ export default {
           },
            methods:{
            loadProducts(){
-       
-            this.axios.get( "http://localhost/MY_WEB_WORKS/farmbag_vue_cli/api.php?action=products").then((response)=>{
+               
+            this.axios.get(this.base_urlbase_url+"/api.php?action=products").then((response)=>{
                 this.products=response.data;
                 // console.log(response.data);
             }).catch(err => {console.log(err)})
@@ -201,6 +202,7 @@ export default {
            }
        },
        created() {
+           console.log(this.base_url);
            $(document).ready(function(){
             $('.navbar').removeClass('navbar-light bg-white');
             $('.footer').addClass('d-none');
