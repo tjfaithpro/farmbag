@@ -8,9 +8,16 @@ import farmers from '../views/farmers.vue'
 import agroBusiness from '../views/agrobusiness.vue'
 import login from '../views/login.vue'
 import signup from '../views/signup.vue'
+import page404 from '../views/404.vue'
 
-// -----dashboard pages
-import dashboardHome from '../views/dashboard/index.vue'
+// Importing Dashboard
+import dashboard_layout from '../views/dashboard/layout.vue'
+import dashboard_index from '../views/dashboard/index.vue'
+import dashboard_myCLient from '../views/dashboard/myClient.vue'
+import dashboard_myProduct from '../views/dashboard/myProduct.vue'
+import dashboard_newProduct from '../views/dashboard/newProduct.vue'
+import dashboard_myProfile from '../views/dashboard/myProfile.vue'
+
 
 //Importing components
 import indFarm from '../components/individualFarmer.vue'
@@ -58,13 +65,39 @@ Vue.use(VueRouter)
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
   },
-  // Dashboard routes
+  { 
+    path: '*', 
+    component: page404 
+  },
+  // Dashboard Routes
   {
     path:'/dashboard/',
-    name:'dashboardIndex',
-    component:dashboardHome,
+    name:'dashboard_layout',
+    component:dashboard_layout,
+    children:[
+      {
+        path:'/dashboard/',
+        name:'dashboardIndex',
+        component:dashboard_index,
+      },
+      {
+        path:'/dashboard/myCLient',
+        component:dashboard_myCLient,
+      },
+      {
+        path:'/dashboard/myProduct',
+        component:dashboard_myProduct,
+      },
+      {
+        path:'/dashboard/myProduct/newProduct',
+        component:dashboard_newProduct,
+      },
+      {
+        path:'/dashboard/myProfile',
+        component:dashboard_myProfile,
+      }
+    ]
   },
-
   // Components routes
   {
     path:'/indFarm',
@@ -82,5 +115,7 @@ const router = new VueRouter({
   mode: 'history',
   routes
 })
+
+
 
 export default router

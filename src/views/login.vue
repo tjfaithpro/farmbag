@@ -1,5 +1,12 @@
 <template>
-    <div class="pageWrapper authentication pt-5"> 
+    <div class="pageWrapper authentication pt-5">
+        <!-- Loader -->
+        <loading :active.sync="isLoading" 
+        :can-cancel="true" 
+        :on-cancel="onCancel"
+        :is-full-page="fullPage"></loading>
+        <!-- Loader -->
+
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 col-xs-12 col-md-6 bg-light m-3 pt-3 shadow rounded">
@@ -60,14 +67,18 @@ export default {
             username:"",
             password:"",
             usernameError:"",
-            passwordError:""
+            passwordError:"",
+            isLoading: false,
+            fullPage: true
         }
     },
     methods:{
         login(){
+            this.isLoading = true;
             this.axios.post(this.$hostname+"api.php?action=login",{
                 username:this.username, password:this.password
             }).then((response)=>{
+                this.isLoading = false;
             if(response.data.non_data){
                 this.usernameError= ' | ' + response.data.non_data;
             }else if(response.data.incorrect_password){
@@ -77,6 +88,7 @@ export default {
                 this.passwordError="";
                 var da = response.data[0];
                 this.$session.start();
+                this.$hostname=true;
                 this.$session.set('user_id', da);
                 this.$router.push({ name: "dashboardIndex"});
 

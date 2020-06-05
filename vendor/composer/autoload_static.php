@@ -15,7 +15,6 @@ class ComposerStaticInit08051fa0f4e37876c9cbe8e7f7aa5fa1
     public static $prefixLengthsPsr4 = array (
         'v' => 
         array (
-            'voku\\tests\\' => 11,
             'voku\\' => 5,
         ),
         'S' => 
@@ -42,7 +41,7 @@ class ComposerStaticInit08051fa0f4e37876c9cbe8e7f7aa5fa1
         ),
         'D' => 
         array (
-            'Doctrine\\Common\\Inflector\\' => 26,
+            'Doctrine\\Inflector\\' => 19,
         ),
         'C' => 
         array (
@@ -51,10 +50,6 @@ class ComposerStaticInit08051fa0f4e37876c9cbe8e7f7aa5fa1
     );
 
     public static $prefixDirsPsr4 = array (
-        'voku\\tests\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/voku/portable-ascii/tests',
-        ),
         'voku\\' => 
         array (
             0 => __DIR__ . '/..' . '/voku/portable-ascii/src/voku',
@@ -111,9 +106,9 @@ class ComposerStaticInit08051fa0f4e37876c9cbe8e7f7aa5fa1
         array (
             0 => __DIR__ . '/..' . '/illuminate/container',
         ),
-        'Doctrine\\Common\\Inflector\\' => 
+        'Doctrine\\Inflector\\' => 
         array (
-            0 => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Common/Inflector',
+            0 => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Inflector',
         ),
         'Carbon\\' => 
         array (
@@ -123,8 +118,10 @@ class ComposerStaticInit08051fa0f4e37876c9cbe8e7f7aa5fa1
 
     public static $classMap = array (
         'JsonException' => __DIR__ . '/..' . '/symfony/polyfill-php73/Resources/stubs/JsonException.php',
+        'Models\\Client' => __DIR__ . '/../..' . '/controller/Models/Client.php',
         'Models\\Product' => __DIR__ . '/../..' . '/controller/Models/Product.php',
         'Models\\Product_category' => __DIR__ . '/../..' . '/controller/Models/Product_category.php',
+        'Models\\Sold_Product' => __DIR__ . '/../..' . '/controller/Models/Sold_Product.php',
         'Models\\User' => __DIR__ . '/../..' . '/controller/Models/User.php',
     );
 

@@ -167,6 +167,33 @@
     color:#31C929;
  }
  
+/* DASHBOARD */
+.cardTitle{
+    background-color: rgb(198, 240, 181);
+    height: 5vh;
+    /* width:100%; */
+    text-align: center;
+    color: rgba(100,100,100,1);
+}
+.cardBody{
+    /* background-color: rgba(100,100,100,1); */
+    padding:5%;
+    width:100%;
+    margin: auto;
+}
+
+
+.cardBody span{
+    font-size: 4em;
+    color:rgba(110, 108, 108, 0.9);
+    
+}
+.cardBody .fonts{
+    font-size: 500%;
+    color:rgba(238, 234, 234, 0.979);
+    /* float:right; */
+    float:right;
+}
 
 
 /* farm Product */
@@ -178,12 +205,13 @@
     min-height:100vh
 }
 #sidebar{
+    /* position:absolute; */
     position:fixed;
-    width:200px;
+    width:250px;
     height:100%;
     background:#151719;
     color:#fff;
-    padding: 3% 1%;
+    /* padding: 3% 0% 0% 1%; */
     /* left:0px;  */
     border-top-right-radius: 6px;
 
@@ -195,21 +223,27 @@
 }
 @media (max-width:576px){
     #sidebar{
-        left:-200px;
+        /* left:-200px; */
+        z-index: 1;
+        width: 55px;
+    }
+    #sidebar .sidbar-links span{
+        display: none;
     }
 }
 
 #sidebar .toggleBar{
     transition: all 10s;
+    width:250px !important;
     /* left: 0px; */
-    left:-200px !important;
+    /* left:-200px !important; */
 
 }
 #sidebar ul li{
     color:rgba(230,230,230,0.9);
     list-style:none;
-    padding:15px 10px;
-    border-bottom: 1px solid rgba(100,100,100,0.3);
+    padding:15px 3px;
+    /* border-bottom: 1px solid rgba(100,100,100,0.3); */
     cursor: pointer;
 }
 #sidebar ul li:hover{
@@ -219,20 +253,20 @@
 
 }
 #sidebar .toggle-btn{
-    position:absolute;
-    left:230px;
-    top: 20px;
+    margin:.5em;
     cursor: pointer;
 }
 #sidebar .toggle-btn span{
     display:block;
     width:30px;
     height:5px;
-    background:#151719;
+    background:#fff;
     margin:3px 0px;
     
 }
-
+#submenu li{
+    border-bottom:none;
+}
 .productList{
 padding:0% 1% 0% 10%;
 }
@@ -323,5 +357,18 @@ padding:0% 1% 0% 10%;
      color: #fff;
  }
 
+
+
+ /* vue transiton */
+ .menuTransit-enter-active, .menuTransit-leave-active{
+     /* transition: opacity .5s; */
+     animation-name: fadeInLeft;
+     animation-duration: .65s;
+ }
+ /* .menuTransit-enter,  */
+ .menuTransit-leave-to{
+    animation-name:fadeOutLeft;
+    /* display:none; */
+ }
 
 

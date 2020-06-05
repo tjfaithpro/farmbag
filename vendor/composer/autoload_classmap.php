@@ -7,7 +7,9 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'JsonException' => $vendorDir . '/symfony/polyfill-php73/Resources/stubs/JsonException.php',
+    'Models\\Client' => $baseDir . '/controller/Models/Client.php',
     'Models\\Product' => $baseDir . '/controller/Models/Product.php',
     'Models\\Product_category' => $baseDir . '/controller/Models/Product_category.php',
+    'Models\\Sold_Product' => $baseDir . '/controller/Models/Sold_Product.php',
     'Models\\User' => $baseDir . '/controller/Models/User.php',
 );

@@ -4,12 +4,12 @@
            <div class="carousel-caption scrollDown">
                  <i class="animated pulse fa fa-angle-double-down arrow-down" style="font-size:10vh"></i>
           </div>
-          <div  id="sliderImage" class="carousel slide carousel-animation bg-dark" data-ride="carousel">
+          <div id="sliderImage" class="carousel slide carousel-animation bg-dark" data-ride="carousel">
               
               <div class="carousel-inner">
                   <div class="carousel-item active" :style="{ backgroundImage: 'url(\'' + require('@/assets/images/slider/img2.jpg') + '\')' } "> 
                           <div class="overlay">
-                                  <div class="caption-text d-md-block">
+                                  <div class="caption-text d-md-block text-center w-100">
                                       <!-- <img src="@/assets/images/slider/img2.jpg" alt="dddd"> -->
                                       <h2 class="el1 animated bounceInDown">WELCOME TO FARMBAG</h2>
                                       <h3 class="el2 animated flipInY">GET ONLINE MEET EXPERTS AND PROMOTE YOUR BUSINESS</h3>
@@ -22,7 +22,7 @@
                   </div>
                   <div class="carousel-item" :style="{ backgroundImage: 'url(\'' + require('@/assets/images/slider/img1.jpg') + '\')' } ">
                    <div class="overlay">
-                        <div class="caption-text d-md-block">
+                        <div class="caption-text d-md-block text-center w-100">
                                       <h1 class="el1 animated bounceInDown">ARE YOU A FARMER!</h1>
                                       <h3 class="el2 animated flipInY">PUSH YOUR PRODUCT TO THE NEXT LEVEL</h3>
                                       <p class="el3 animated slideInUp">IN JUST THREE STEPS</p>
@@ -32,7 +32,7 @@
                   </div>
                   <div class="carousel-item" :style="{ backgroundImage: 'url(\'' + require('@/assets/images/slider/img3.jpg') + '\')' } ">
                    <div class="overlay">
-                       <div class="caption-text d-md-block">
+                       <div class="caption-text d-md-block text-center w-100">
                                       <h1 class="el1 animated bounceInDown">GET INVLOLVED! JOIN!</h1>
                                       <h3 class="el2 animated flipInY">AGRICULTURAL EXPERTS AND PROFESSIONALS</h3>
                                       <p class="el3 animated slideInUp">WITH A CLICK AWAY</p>
@@ -43,7 +43,7 @@
                   </div>
                           <div class="carousel-item" :style="{ backgroundImage: 'url(\'' + require('@/assets/images/slider/img4.jpg') + '\')' } ">
                    <div class="overlay">
-                       <div class="caption-text d-md-block">
+                       <div class="caption-text d-md-block text-center w-100">
                                       <h1 class="el1 animated bounceInDown">GET INVLOLVED! JOIN!</h1>
                                       <h3 class="el2 animated flipInY">AGRICULTURAL EXPERTS AND PROFESSIONALS</h3>
                                       <p class="el3 animated slideInUp">WITH A CLICK AWAY</p>

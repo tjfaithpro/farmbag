@@ -1,17 +1,25 @@
 import Vue from 'vue'
 import App from './App.vue'
-// import dashboard from './dashboard.vue'
+
 import router from './router'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 import VueSession from 'vue-session'
-
+import VueGraph from 'vue-graph'
+ 
+Vue.use(VueGraph)
 Vue.use(VueAxios, axios)
 Vue.use(VueSession)
 
-// export const bus = new Vue();
+// Global Variables 
+
+// -----variable for api
 // Vue.prototype.$hostname = "http://localhost/MY_WEB_WORKS/farmbag_vue_cli/";
 Vue.prototype.$hostname = 'https://farmbag.com.ng/';
+
+// -----variable for session
+Vue.prototype.$sessionPresent=false;
+// Include jQuery
 window.$ = window.jQuery = require("jquery");
 window.$ = require('jquery') 
 // window.JQuery = require('jquery')
@@ -30,17 +38,17 @@ require('@/assets/css/animate.min.css')
 import Header from './components/header.vue'
 import Navbar from './components/navbar.vue'
 import Footer from './components/footer.vue'
+import sidebar from './components/sidebar.vue'
 
 Vue.config.productionTip = false
+
 Vue.component('app-header',Header)
 Vue.component('app-navbar',Navbar)
 Vue.component('app-footer',Footer)
+Vue.component('side-bar',sidebar)
+
 new Vue({
+  render: h => h(App),
   router,
-  render: h => h(App)
 }).$mount('#app')
  
-// new Vue({
-//   router,
-//   render:h=>h(dashboard)
-// }).$mount('#app-dashboard')

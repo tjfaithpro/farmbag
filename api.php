@@ -63,6 +63,20 @@ if ($action == 'login'){
    $controllerQuery ->login($query);
 }
 
+if($action == 'count'){
+   $query = json_decode(file_get_contents("php://input"),true);
+   $controllerQuery->count($query);
+}
+
+if($action=='graphData'){
+   $query = json_decode(file_get_contents("php://input"),true);
+   $controllerQuery->graphData($query);
+}
+
+if($action == 'inidvidual_products'){
+   $query = json_decode(file_get_contents("php://input"),true);
+   $controllerQuery->inidvidual_products($query);
+}
 // echo json_encode($result);
 
 
