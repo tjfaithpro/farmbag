@@ -122,7 +122,7 @@
                        
                        <a href="#" style="text-decoration:none; color:black" >
                             <div class="card">
-                                <img class="card-img-top" src="@/assets/images/two-young-farmers-shake-hands-background-soil-spring_78774-21.jpg" alt="Card image cap">
+                                <img class="card-img-top" :src="product.product_icon" alt="Card image cap">
                                 <h4 class="card-title mt-3">{{product.product_title}}</h4>
                                 <div class="card-body">
                                     <h5 class="card-text">
