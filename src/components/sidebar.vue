@@ -10,7 +10,7 @@
                
             
                 <ul class="p-3 sidbar-links">
-                    <router-link to="/dashboard/admin/"><li><i class="fas fa-tachometer-alt"></i><span class="ml-3">Dashboard</span></li></router-link>
+                    <router-link to="/dashboard/"><li><i class="fas fa-tachometer-alt"></i><span class="ml-3">Dashboard</span></li></router-link>
                     <router-link to="/dashboard/myProduct"><li @click="menuTransition.myProduct = !menuTransition.myProduct"><i class="fas fa-shopping-basket"></i><span class="ml-3">My Product</span><span ><i class="float-right mt-1 fa fa-angle-right"></i></span></li></router-link>
                     <div class="submenu ml-3">
                         <transition name="menuTransit">

@@ -93,7 +93,7 @@ export default {
                 this.$session.start();
                 this.$session.set('user_id', da);
                 this.$router.push({path: "/dashboard/"});
-                this.$router.go();
+                this.$router.go();  
                 this.toggleLoding = true;
             }
             })
