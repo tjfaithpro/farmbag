@@ -12,14 +12,10 @@ export default {
         }
     },
     methods:{
-        setSession(){
-            let da ='this is a new data';
-             this.$session.start();
-                this.$session.set('user_id', da);
-        }
+      
     },
     mounted(){
-        this.setSession();
+        
     }
 }
 </script>
