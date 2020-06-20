@@ -1,11 +1,9 @@
 <template>
     <div class="pageWrapper authentication pt-5">
-        <!-- Loader -->
-        <loading :active.sync="isLoading" 
-        :can-cancel="true" 
-        :on-cancel="onCancel"
-        :is-full-page="fullPage"></loading>
-        <!-- Loader -->
+    
+  <div id="loadingIcon" :class="{'d-none':toggleLoding}">
+     <img src="@/assets/images/loading.gif" alt="">
+ </div>
 
         <div class="container">
             <div class="row">
@@ -68,33 +66,39 @@ export default {
             password:"",
             usernameError:"",
             passwordError:"",
-            isLoading: false,
-            fullPage: true
+           toggleLoding:true,
+           
         }
     },
     methods:{
         login(){
-            this.isLoading = true;
+            this.toggleLoding =false;
+            this.usernameError="";
+             this.passwordError="";
             this.axios.post(this.$hostname+"api.php?action=login",{
                 username:this.username, password:this.password
             }).then((response)=>{
-                this.isLoading = false;
             if(response.data.non_data){
+                 this.toggleLoding =true;
                 this.usernameError= ' | ' + response.data.non_data;
             }else if(response.data.incorrect_password){
+                 this.toggleLoding =true;
                 this.passwordError= ' | ' + response.data.incorrect_password;
             }else{
+            
+            this.toggleLoding =false;
                 this.usernameError="";
                 this.passwordError="";
                 var da = response.data[0];
                 this.$session.start();
-                this.$hostname=true;
                 this.$session.set('user_id', da);
-                this.$router.push({ name: "dashboardIndex"});
-
+                this.$router.push({path: "/dashboard/"});
+                this.$router.go();
+                this.toggleLoding = true;
             }
             })
         }
-    }
+    },
+   
 }
 </script>

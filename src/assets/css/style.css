@@ -2,10 +2,26 @@
     width:120px
  }
  
+ #loadingIcon{
+     background: #fff;
+     position: fixed;
+     z-index: 2;
+     height: 100vh;
+     width: 100vw;
+     top:0;
+     
+ }
+ #loadingIcon img{
+     display: block;
+    width: 20em;
+     margin-top:30vh;
+     margin-left: auto;
+     margin-right: auto;
+ }
  body{
      margin:0;
  }
- #sliderImage .carousel-item{
+ #sliderImage .carousel-item{ 
      background-repeat: no-repeat;
      background-position: center;
      background-size: cover;
@@ -214,6 +230,7 @@
     /* padding: 3% 0% 0% 1%; */
     /* left:0px;  */
     border-top-right-radius: 6px;
+    z-index: 4;
 
 }
 @media(min-width:992px){
@@ -224,7 +241,7 @@
 @media (max-width:576px){
     #sidebar{
         /* left:-200px; */
-        z-index: 1;
+        z-index: 4;
         width: 55px;
     }
     #sidebar .sidbar-links span{

@@ -168,6 +168,8 @@ export default {
                    this.$router.push({ name: "confirm"});
                     // this.$router.push('confirm');
                 }else{
+                    console.log(response.data);
+
                 alert('oops sorry an error occured, try registering again');
 
                 //    this.$router.push({ name: "confirm"});

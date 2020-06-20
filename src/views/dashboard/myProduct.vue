@@ -1,5 +1,6 @@
 <template>
     <div>
+       <loading-icon></loading-icon>
         <div class="container" style="padding-left:7em">
           <div class="row mt-4 pl-5 text-center d-flex" style="justify-content:center">
             <div class="col-7 input-group">
@@ -20,7 +21,9 @@
                        <div class="col-md-2 mb-4" v-if="products_to_show==product.category_id | products_to_show == 0" >
                        <a href="#" style="text-decoration:none; color:black" >
                             <div class="card" style="width: 15rem;">
-                            <img class="card-img-top" src="@/assets/images/two-young-farmers-shake-hands-background-soil-spring_78774-21.jpg" alt="Card image cap">
+                              
+                            
+                            <img class="card-img-top" :src="product.product_icon" alt="Card image cap">
                             <h4 class="card-title mt-3">{{product.product_title}}</h4>
                             <div class="card-body">
                             <h5 class="card-text">
@@ -48,12 +51,17 @@
     </div>
 </template>
 <script>
+// import firebase from 'firebase';
+
 export default {
     data(){
         return{
           product_categorys:{},
           products:{},
           products_to_show:0,
+          toggleLoding:false,
+          product_icon_url:null,
+          counter:0
         }
     },
     computed:{
@@ -63,17 +71,20 @@ export default {
           }
     },
     methods:{
+    
          loadProducts(){
             this.axios.post( this.$hostname+"api.php?action=inidvidual_products",{
-              userId:this.$session.get('user_id'),
+              userId:this.$session.get('user_id')
             }).then((response)=>{
                 this.products=response.data;
-                console.log(response.data);
+              this.toggleLoding=true;
         }).catch(err => {err})
     }
   },
   created(){
     this.loadProducts();
+  },
+  mounted(){
   }
 }
 </script>

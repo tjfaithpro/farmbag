@@ -13,6 +13,12 @@ use Illuminate\Database\Capsule\Manager as Capsule;
     "database" => "farmbag",
     "username" => "root",
     "password" => ""
+    
+   //   "driver" => "mysql",
+   //  "host" =>"127.0.0.1",
+   //  "database" => "farmbagc_db",
+   //  "username" => "farmbagc_user",
+   //  "password" => "farmbagc_user"
  ]);
 //Make this Capsule instance available globally.
  $capsule->setAsGlobal();

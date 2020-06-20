@@ -25,7 +25,7 @@
         <div class="row mt-4" style="display:flex; justify-content-center" >
                        <!-- PRODUCT POST CARD -->
                        <div class="mb-4 d-flex" style="justify-content:center;" v-for="(product, index) in productComputed" :key="index.id">
-                       <div class="col-md-4 mb-4" v-if="products_to_show==product.category_id | products_to_show == 0" >
+                       <div class="col-md-2 mb-4" v-if="products_to_show==product.category_id | products_to_show == 0" >
                        <a href="#" style="text-decoration:none; color:black" >
                             <div class="card" style="width: 18rem;">
                             <img class="card-img-top" src="@/assets/images/two-young-farmers-shake-hands-background-soil-spring_78774-21.jpg" alt="Card image cap">

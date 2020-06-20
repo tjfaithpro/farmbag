@@ -1,5 +1,7 @@
 <template>
     <div>
+         <loading-icon></loading-icon>
+
         <div class="container" style="padding-left:15%">
             <div class="row d-flex">
                 <div class="col-md-4" >
@@ -73,11 +75,11 @@
                         :names="names"
                         :values="values"
                         >
-                    <note :text="'Product Uploaded / Sold Chart'"></note>
+                    <!-- <note :text="'Product Uploaded / Sold Chart'"></note>
                     <tooltip :names="names" :position="'right'"></tooltip>
                     <legends :names="names"></legends>
                     <guideline :tooltip-x="true"></guideline>
-                    <guideline :tooltip-y="true"></guideline>
+                    <guideline :tooltip-y="true"></guideline> -->
                 </graph-line>
             </div>
             </div>
@@ -98,7 +100,8 @@ export default {
                 values: [[],[]],
             toggleBar:false,
             hoverShadow:false,
-            menuTransition:{myProfile:false, myProduct:false}
+            menuTransition:{myProfile:false, myProduct:false},
+            // toggleLoding:false,
         }
     },
      beforeCreate: function () {
@@ -115,7 +118,6 @@ export default {
              this.axios.post(this.$hostname+"api.php?action=count",{
                 userId:this.userSessionData.user_id
             }).then((response)=>{
-                this.$sessionPresent=true;
                 this.countData = response.data;
             }).catch(err => {console.log(err)})
       },
@@ -125,24 +127,26 @@ export default {
               uploadYear:this.yearSelected
           }).then((response)=>{
             //   var result = Object.entries(response.data);
-              console.log(response.data);
+            //   console.log(response.data);
               this.values=[
                 this.values= response.data[0],
                 this.values= response.data[1]
               ]
               
             
-          }).catch(err=>{err})
+          }).catch(err=>{ 
+              console.log(err);
+              })
       }
   },
   created() {
        this.getGraphData();
-
        this.getCount();
+       
 
     },
       mounted(){
-
+        //   this.toggleLoding=true;
     },
      computed : {
     years () {

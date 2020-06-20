@@ -16,13 +16,13 @@ class productController
 {
     
     public $c_url;
-    private function generateId(){
+    private function generateId($id_type){
         // CODE TO GENERATE ID
         $token = 'qwertzuiopasdfghjklyxcvbnmABCDEFGHIJKLMNOPQRSTUVWXYZ123456789abcdefghijklmnopqrstuvwxyz';
         $token = str_shuffle($token);
         $token = substr($token,  0,  2);
         $current_date = date('Ymd');
-        return $token = $token.$current_date;
+        return $token = $id_type.'_'.$token.$current_date;
     }
     
     
@@ -74,8 +74,9 @@ class productController
         // ])->save();
         
         // hash key
+        $user ='user';
         $hashed_password = password_hash($data['password'], PASSWORD_DEFAULT);
-        $userID = $this->generateId();    
+        $userID = $this->generateId('user');    
         $newUser = new User;
         $newUser->user_id = $userID;
         $newUser->username = $data['username'];
@@ -329,8 +330,30 @@ class productController
         public function inidvidual_products($data){
         //   echo json_encode($data['userId']);
             echo json_encode(Product::latest()->where('userId',$data['userId'])->get());
-          
+            
         }
+
+        public function get_id($data){
+           echo json_encode($this->generateId($data['id_type']));
+        }
+
+        public function new_Product_Uplaod($query){
+            $newProduct = new Product;
+            $newProduct->product_id=$query['product_id'];
+            $newProduct->userId=$query['user_id'];
+            $newProduct->product_title = $query['productTitle'];
+            $newProduct->product_discription = $query['productDescription'];
+            $newProduct->product_icon= $query['product_icon'];
+            $newProduct->category_id=$query['productCategory'];
+
+            $saved = $newProduct->save();
+            echo json_encode($product_id);
+
+           
+
+        }
+
+        // END OF CLASS 
 
 }
 
@@ -351,6 +374,21 @@ class productController
 //     // Do something, you know... log them in.
 // } 
 // Else, Redirect them back to the login page.
+
+
+
+      
+        //    // Count total files
+        //     $countfiles = count($_FILES['file']['name']);
+            
+        //     // Looping all files
+        //     for($i=0;$i<$countfiles;$i++){
+        //     $filename = $_FILES['file']['name'][$i];
+            
+        //     // Upload file
+        //     move_uploaded_file($_FILES['file']['tmp_name'][$i],'uploads/'.$filename);
+                
+            // }
 
 ?>
 
